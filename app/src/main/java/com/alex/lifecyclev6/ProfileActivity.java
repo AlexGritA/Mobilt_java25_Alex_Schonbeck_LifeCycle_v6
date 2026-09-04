@@ -54,6 +54,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         Button btnLogout = findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(v -> {
+            SharedPreferences loginPrefs = getSharedPreferences("login_prefs", MODE_PRIVATE);
+            loginPrefs.edit().putBoolean("remember_me", false).apply();
             startActivity(new Intent(ProfileActivity.this, MainActivity.class));
             finish();
         });
@@ -80,8 +82,8 @@ public class ProfileActivity extends AppCompatActivity {
             String heightStr = etHeight.getText().toString();
             String weightStr = etWeight.getText().toString();
 
-            if (heightStr.isEmpty() || weightStr.isEmpty()) {
-                Toast.makeText(this, "Please enter height and weight", Toast.LENGTH_SHORT).show();
+            if (!heightStr.matches("\\d{2,3}(\\.\\d+)?") || !weightStr.matches("\\d{2,3}(\\.\\d+)?")) {
+                Toast.makeText(this, "Enter valid height/weight (numbers only, e.g. 175 or 68.5)", Toast.LENGTH_LONG).show();
                 return;
             }
 

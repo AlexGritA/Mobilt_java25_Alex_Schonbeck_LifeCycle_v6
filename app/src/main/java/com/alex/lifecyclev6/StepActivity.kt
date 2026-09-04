@@ -38,6 +38,8 @@ class StepActivity : AppCompatActivity(), SensorEventListener {
 
         val btnLogout: Button = findViewById(R.id.btnLogout)
         btnLogout.setOnClickListener {
+            val loginPrefs = getSharedPreferences("login_prefs", MODE_PRIVATE)
+            loginPrefs.edit().putBoolean("remember_me", false).apply()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
