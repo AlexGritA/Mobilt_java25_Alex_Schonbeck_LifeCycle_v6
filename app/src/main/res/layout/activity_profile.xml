@@ -94,5 +94,33 @@
             android:layout_height="wrap_content"
             android:text="Dark mode"
             android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tvBmiResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnGoToSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to Steps"
+            android:layout_marginTop="24dp" />
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 </ScrollView>
